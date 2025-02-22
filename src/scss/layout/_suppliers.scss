@@ -1,0 +1,58 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+
+.suppliers {
+    padding: 4rem 1rem;
+    
+    &__slider {
+        /* display: flex;
+        justify-content: center;
+        align-items: center; */
+
+        height: auto;
+        width: 90vw;
+        margin: 0 auto;
+        overflow: hidden;
+        
+        background: v.$white;
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(7.4px);
+        -webkit-backdrop-filter: blur(7.4px);
+        border: 1px solid rgba(255, 255, 255, 0.4);
+    }
+
+    &__track {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* gap: 1rem; */
+        animation: scrolling 20s linear infinite;
+        width: calc(20rem * 14);
+
+        @keyframes scrolling {
+
+            0% {
+                transform: translateX(0);
+            }
+        
+            100% {
+                transform: translateX(calc(-20rem * 7));
+            }
+        } 
+    }
+
+    &__slide {
+        width: 20rem;
+        margin: 20px;
+
+        & img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+
+}

@@ -1,0 +1,68 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+
+.products {
+    padding: 4rem 0;
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4rem;
+        width: 70%;
+        margin: 0 auto;
+        padding-top: 2rem;
+
+        @include m.phone {
+            grid-template-columns: 1fr;
+            width: 90%;
+            gap: 3rem;
+        }
+    }
+}
+
+.product {
+    position: relative;
+    width: 100%;
+    height: 30rem;
+    max-height: 30rem;
+    box-shadow: v.$box-shadow;
+    border-radius: v.$border-radius;
+    overflow: hidden;
+
+
+    @include m.phone {
+        max-height: 20rem;
+    }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    &__info {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: v.$white-transparent;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: .5rem 2rem;
+        border-radius: 0 0 2rem 2rem;
+    }
+
+    &__title {
+        font-size: v.$h4-font-size;
+        font-weight: 700;
+    
+    }
+
+    &__arrow {
+        transform: rotate(90deg);
+    }
+
+}
