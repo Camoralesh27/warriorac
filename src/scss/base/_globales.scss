@@ -73,7 +73,7 @@ fieldset {
     margin: 0 auto;
 
     @include m.phone {
-        width: 98%;
+        width: 90%;
     }
 }
 
@@ -104,9 +104,9 @@ fieldset {
     text-transform: uppercase;
     text-align: center;
 
-    @include m.phone {
+    /* @include m.phone {
         font-size: v.$h2-font-size-mobile;
-    }
+    } */
 }
 
 [class$="--blue"] {
