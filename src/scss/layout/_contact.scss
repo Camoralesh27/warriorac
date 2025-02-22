@@ -1,0 +1,88 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.contact {
+    background: linear-gradient(to right, rgba(1, 40, 64, 0.70), rgba(1, 40, 64, 0.70)) , url('../img/contact.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+
+    &__heading {
+        color: v.$white;
+    }
+
+    &__subtitle {
+        color: v.$white;
+
+        &--bold {
+            font-weight: 600;
+        }
+    }
+
+    &__grid {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 4rem;
+        /* margin-top: 4rem; */
+
+        @include m.phone {
+            flex-direction: column;
+        }
+
+        @include m.tablet {
+            flex-direction: column;
+        }
+    }
+
+    &__item {
+        background-color: v.$gray-1;
+        border-radius: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 27rem;
+        /* height: 17rem; */
+        padding: 2rem;
+
+        
+    }
+
+    &__title{
+        
+    }
+    &__text {
+        
+
+        &--bold {
+            font-weight: 600;
+        }
+    }
+
+    &__redes-sociales-grid {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    &__redes-sociales-link {
+        font-size: 4rem;
+        
+        & i {
+            transition: all .3s;
+        }
+
+        & i:hover {
+            color: v.$yellow-2;
+            transform: scale(1.1);
+        }
+    }
+
+
+
+}

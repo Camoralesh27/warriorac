@@ -109,6 +109,14 @@ fieldset {
     } */
 }
 
+[class$="__subtitle"] {
+    font-size: v.$normal-font-size;
+    color: v.$black;
+    text-align: center;
+    margin-top: 1rem;
+    line-height: 3rem;
+}
+
 [class$="--blue"] {
     color: v.$blue-1;
 }

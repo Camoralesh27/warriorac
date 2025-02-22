@@ -1,0 +1,146 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.estadisticas {
+    padding: 5rem 0;
+    background-color: v.$gray-1;
+
+
+    &__box {
+        display: grid;
+        grid-template-columns: 4fr 2fr;
+        
+        @include m.phone {
+            display: flex;
+            flex-direction: column-reverse;
+        }
+
+        @include m.tablet {
+            display: flex;
+            flex-direction: column-reverse;
+            width: 80%;
+            margin: 0 auto;
+        }
+    }
+
+    &__grid {
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        justify-content: center;
+
+        @include m.phone {
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+    }
+
+    &__grid-1 {
+        display: flex;
+        flex-direction: column;
+        gap: 5rem;
+        justify-content: center;
+
+        @include m.phone {
+            gap: 2rem;
+        }
+    }
+
+    &__grid-2 {
+        display: flex;
+        flex-direction: column;
+        gap: 5rem;
+        justify-content: center;
+        margin-left: -5rem;
+
+        @include m.phone {
+            margin: 0;
+            gap: 2rem;
+        }
+    }
+
+    &__item {
+        border-radius: v.$border-radius;
+        box-shadow: v.$box-shadow;
+        background-color: v.$white;
+        color: v.$blue-2;
+        padding: 3rem;
+        width: 37rem;
+
+        @include m.phone {
+            width: 30rem;
+        }
+        
+
+        &--icono {
+            position: relative;
+
+        }
+
+        &-img {
+            width: 9rem;
+            position: absolute;
+            top: -2rem;
+            right: -4rem;
+
+            @include m.phone {
+                display: none;
+            }
+        }
+
+        &-resalte {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+            
+        }
+
+        &-line {
+            width: .5rem;
+            height: 3.5rem;
+            background-color: v.$yellow-2;
+        }
+
+        &-text {
+            font-size: v.$h4-font-size;
+            font-weight: 600;
+            line-height: 2.5rem;
+
+            &--grande {
+                font-size: v.$h2-font-size;
+                font-weight: 700;
+
+                @include m.tablet {
+                    font-size: v.$h1-font-size-mobile;
+                }
+            }
+        }
+    }
+
+    &__contenido {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        justify-content: center;
+        margin-bottom: 2rem;
+    }
+
+    &__title {
+        font-size: v.$h2-font-size;
+        line-height: 4.5rem;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    &__text {
+        color: v.$blue-2;
+        text-align: center;
+    }
+
+    &__button {
+        
+        @include m.boton(v.$yellow-2, v.$black);
+    }
+
+}
