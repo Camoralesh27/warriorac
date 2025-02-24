@@ -24,6 +24,9 @@
     <!-- -- Iconos -- -->   
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
 
+    <!-- boostrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
     <!-- --- Estilos --- -->
     <link rel="stylesheet" href="build/css/app.css">
 </head>
@@ -57,7 +60,7 @@
         <ul class="nav__links">
             <li class="nav__links-item"><a href="#home" class="nav__links-link">Home</a></li>
             <li class="nav__links-item"><a href="#about" class="nav__links-link">About us</a></li>
-            <li class="nav__links-item"><a href="#services" class="nav__links-link">Servicios</a></li>
+            <li class="nav__links-item"><a href="#services" class="nav__links-link">Services</a></li>
             <li class="nav__links-item"><a href="#reviews" class="nav__links-link">Reviews</a></li>
             <li class="nav__links-item"><a href="#contact" class="nav__links-link">Contact us</a></li>
         </ul>
@@ -98,7 +101,7 @@
                 </li>
 
                 <li class="navM__item">
-                    <a href="#contacto" class="navM__link">Contac us</a>
+                    <a href="#contact" class="navM__link">Contac us</a>
                 </li>
                 <li class="navM__item">
                     <a href="https://www.facebook.com/profile.php?id=100084471521194" target="_blank" class="navM__link">
@@ -116,7 +119,104 @@
     <!-- ======= hero ======= -->
 
     <!-- ======= services ======= -->
+    <section class="services" id="services">
 
+        <div class="services__box">
+            <h2 class="services__heading">Heating & Air Conditioning Services</h2>
+
+            <div class="services__line"></div>
+
+            <p class="services__subtitle contenedor">We provide top-quality air conditioning services tailored to meet the needs of residential and commercial clients in Dallas, TX, and Oklahoma. Our certified technicians use cutting-edge technology to ensure energy-efficient and reliable solutions. With a strong commitment to excellence, we guarantee customer satisfaction in every service we deliver.</p>
+
+            
+        </div>
+
+        <div class="services__grid">
+
+            <!-- serv 1 -->
+            <div class="service">
+                <div class="service__picture">
+                    <img src="./build/img/service-instalation.jpg" alt="air conditioner" class="service__img" loading="lazy">
+                </div>
+                
+
+                <div class="service__info">
+                    <h3 class="service__title">Installation</h3>
+                <p class="service__text">Looking to install a new air
+                    conditioning system? Our
+                    skilled technicians have the
+                    expertise to install a wide
+                    range of units, catering to
+                    both residential and
+                    commercial properties. We
+                    prioritize efficiency to ensure your new system operates seamlessly.</p>
+                </div>
+            </div>
+
+            <!-- serv 2 -->
+            <div class="service">
+                <div class="service__picture">
+                    <img src="./build/img/service-repairs.jpg" alt="air conditioner" class="service__img" loading="lazy">
+                </div>
+                
+
+                <div class="service__info">
+                    <h3 class="service__title">Repairs</h3>
+                <p class="service__text">Is your air conditioner acting
+                    up? Count on us for quick and reliable repairs. Our
+                    technicians are equipped with the knowledge and tools
+                    needed to diagnose and fix a
+                    variety of issues, restoring
+                    your system's functionality
+                    promptly.</p>
+                </div>
+            </div>
+
+            <!-- serv 3 -->
+            <div class="service">
+                <div class="service__picture">
+                    <img src="./build/img/service-maintenance.jpg" alt="air conditioner" class="service__img" loading="lazy">
+                </div>
+                
+
+                <div class="service__info">
+                    <h3 class="service__title">Maintenance</h3>
+                <p class="service__text">Regular maintenance is key to extending the lifespan of your air conditioning unit. Our
+                    professionals offer comprehensive maintenance
+                    services, keeping your system
+                    running smoothly and
+                    efficiently throughout the
+                    year.</p>
+                </div>
+            </div>
+
+            <!-- serv 4 -->
+            <div class="service">
+                <div class="service__picture">
+                    <img src="./build/img/service-newConstruction.jpg" alt="air conditioner" class="service__img" loading="lazy">
+                </div>
+                
+
+                <div class="service__info">
+                    <h3 class="service__title">New Construction</h3>
+                <p class="service__text">Stay ahead with the latest in
+                    air conditioning technology.
+                    We provide upgrade services
+                    to enhance the performance
+                    and energy efficiency of your
+                    existing system, ensuring you enjoy the benefits of modern technology.</p>
+                </div>
+            </div>
+        </div>
+
+        
+            <a href="#contact" class="services__button">
+                <p>You won’t believe our PRICES! </p>
+
+                <i class="bi bi-arrow-right"></i>
+            </a>
+        
+    </section>
 
     <!-- ======= statistics ======= -->
     <section class="estadisticas">
@@ -204,6 +304,8 @@
 
                 <a href="#contact" class="estadisticas__button">
                     GET A FREE ESTIMATE!
+
+                    <i class="bi bi-arrow-right"></i>
                 </a>
             </div>
         </div>
@@ -386,13 +488,13 @@
     </section>
 
     <!-- ======= contact ======= -->
-    <div class="contact" id="contact">
+    <section class="contact" id="contact">
         <div class="contact__box">
             <h2 class="contact__heading">We are here for you,<br>contact us<span class="contact__heading--blue"> at anytime</span></h2>
 
-            <p class="contact__subtitle">Have any questions about our services or just want to talk with us?<br> <span class="contact__subtitle--bold">Send us a text or call us to help you NOW!</span></p>
-
             <div class="contact__line"></div>
+
+            <p class="contact__subtitle">Have any questions about our services or just want to talk with us?<br> <span class="contact__subtitle--bold">Send us a text or call us to help you NOW!</span></p>    
         </div>
 
         <div class="contact__grid contenedor">
@@ -424,7 +526,7 @@
             </div> 
         </div>
 
-    </div>
+    </section>
 
     <!-- ======= footer ======= -->
     <footer class="footer">

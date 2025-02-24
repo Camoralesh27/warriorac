@@ -36,9 +36,9 @@
     box-shadow: v.$box-shadow;
     display: inline-block;
     font-weight: 700;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     text-align: center;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     transition: all 200ms;
 
     @include tablet {

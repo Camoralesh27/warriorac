@@ -139,7 +139,6 @@
     }
 
     &__button {
-        
         @include m.boton(v.$yellow-2, v.$black);
     }
 

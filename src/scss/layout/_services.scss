@@ -1,0 +1,112 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+
+.services {
+    background: linear-gradient(to right, rgba(1, 40, 64, 0.70), rgba(1, 40, 64, 0.70)) , url('../img/contact.jpg');
+    background-size: cover;
+    background-position: center;
+
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+
+    &__heading {
+        color: v.$white;
+    }
+
+    &__subtitle {
+        color: v.$white;
+        text-align: center;
+
+        &--bold {
+            font-weight: 600;
+        }
+    }
+
+    &__grid {
+        display: flex;
+        justify-content: center;
+        
+        gap: 4rem;
+        /* margin-top: 4rem; */
+
+        @include m.phone {
+            flex-direction: column;
+        }
+
+        @include m.tablet {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            
+        }
+
+        /* @include m.tablet {
+            flex-direction: column;
+        } */
+    }
+
+    &__button {
+        
+        @include m.boton(v.$yellow-2, v.$black);
+        
+        & {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        align-items: center;
+        }
+
+        & i {
+            font-size: 2.5rem;
+        }
+    }
+}
+
+
+.service {
+    background-color: v.$gray-1;
+    border-radius: 2rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 27rem;
+    /* height: 17rem; */
+    min-height: 25rem;
+
+    &__picture {
+        width: 100%;
+        min-width: 40rem;
+        min-height: 20rem;
+    }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__info {
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: .5rem;
+    }
+
+    &__title {
+        color: v.$blue-2;
+        text-align: center;
+    }
+
+    &__text {
+        text-align: center;
+
+        &--bold {
+            font-weight: 600;
+        }
+    }
+}
