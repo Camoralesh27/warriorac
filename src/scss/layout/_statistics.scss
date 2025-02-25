@@ -9,6 +9,8 @@
     &__box {
         display: grid;
         grid-template-columns: 4fr 2fr;
+
+        
         
         @include m.phone {
             display: flex;
@@ -30,6 +32,12 @@
         justify-content: center;
 
         @include m.phone {
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        @include m.tablet {
             flex-direction: column;
             align-items: center;
             gap: 2rem;
@@ -57,6 +65,10 @@
         @include m.phone {
             margin: 0;
             gap: 2rem;
+        }
+
+        @include m.tablet {
+            margin-left: 0;
         }
     }
 
