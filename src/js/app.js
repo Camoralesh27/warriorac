@@ -24,28 +24,42 @@ showMenu('navM-toggle', 'navM-menu');
 
 
 
+/*======= Valideción formulario =======*/
+/* ==== Función para mostrar mensaje de éxito ==== */
+function mostrarMensajeExito() {
+    spinnerAnimation.classList.add('hidden');
+    form.reset();
 
-/*======= TIMER EN BOTON DE DESCARGA PDF =======*/
-document.addEventListener("DOMContentLoaded", function () {
-    const botones = document.querySelectorAll(".catalogo__boton");
+    spinnerText.classList.remove('hidden');
+    spinnerText.textContent = "¡Gracias por contactarnos! Tus datos han sido enviados.";
 
-    botones.forEach(boton => {
-        boton.addEventListener("click", function () {
+    setTimeout(() => {
+        spinnerText.classList.add('hidden');
+        spinner.classList.add('hidden');
+    }, 3000);
+}
 
-            // Deshabilitar el botón y cambiar el texto
-            boton.disabled = true;
-            boton.classList.add("catalogo__boton--disabled");
-            boton.textContent = "Espera 15s...";
+/* ==== Función para mostrar mensaje de error ==== */
+function mostrarMensajeError() {
+    spinnerAnimation.classList.add('hidden'); // Oculta la animación del spinner
 
-            // Reactivar el botón después de 5 segundos
-            setTimeout(() => {
-                boton.disabled = false;
-                boton.classList.remove("catalogo__boton--disabled");
-                boton.textContent = "Descargar Catálogo📥";
-            }, 15000);
-        });
-    });
-});
+    spinnerText.classList.remove('hidden'); // Muestra el texto del spinner
+    spinnerText.textContent = "Ocurrió un error al enviar los datos. Por favor, inténtalo de nuevo.";
+    spinnerText.style.backgroundColor = "#dc2626"; // Cambia el fondo del mensaje a rojo
+    spinnerText.style.color = "white"; // Asegura que el texto sea legible con contraste
+
+    setTimeout(() => {
+        spinnerText.classList.add('hidden'); // Oculta el mensaje después de 3 segundos
+        spinner.classList.add('hidden'); // Oculta el spinner completo
+        spinnerText.style.backgroundColor = ""; // Resetea el fondo del mensaje
+        spinnerText.style.color = ""; // Resetea el color del texto
+    }, 3000);
+}
+
+
+/* ==== Cambiar idioma ingles - español ==== */
+
+
 
 /*======= Actualizar año footer =======*/
 document.getElementById("year").textContent = new Date().getFullYear();

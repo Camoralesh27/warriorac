@@ -1,0 +1,38 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.about {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 4rem 0;
+
+    &__text {
+        text-align: center;
+        
+        &--highlight {
+            color: v.$yellow-3;
+        }
+
+        &--bold {
+            font-weight: 600;
+        }
+    }
+
+
+
+    &__button {
+        @include m.boton(v.$yellow-2, v.$black);
+
+        & {
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+            align-items: center;
+            width: max-content;
+        }
+    }
+
+}

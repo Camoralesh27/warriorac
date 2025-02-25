@@ -117,12 +117,109 @@
     </div>
 
     <!-- ======= hero ======= -->
+     <main class="hero">
+        <div class="hero__content">
+            <div class="hero__info">
+                <h1 class="hero__heading">Reliable HVAC Solutions for <span class="hero__heading--yellow">Ultimate Comfort & Efficiency</span></h1>
+    
+                <p class="hero__subtitle">At Warrior-HVAC, <span class="hero__subtitle--yellow">we provide expert heating, ventilation, and air conditioning (HVAC) services</span> to keep your home or business comfortable year-round. From energy-efficient installations to fast, reliable repairs, <span class="hero__subtitle--yellow">we help you save on energy costs while improving indoor air quality</span>.</p>
+            </div>
+    
+            <div class="hero__form">
+                <form action="" class="form" id="form">
+                    <h3 class="form__title">Request a Free Quote </h3>
+    
+                    <fieldset class="form__fieldset">
+                        <div class="form__grid">
+                            <label for="nombre" class="form__label">* Name
+    
+                                <input type="text" name="nombre" id="nombre" class="form__input" placeholder="Your name" required >
+                            </label>
+        
+                            <label for="telefono" class="form__label">* Phone
+        
+                                <input type="tel" name="telefono" id="telefono" class="form__input" placeholder="Your phone number" pattern="[0-9]{3}[0-9]{3}[0-9]{4}"
+                                title="Please enter a valid phone number in the format XXX-XXX-XXXX." required>
+                            </label>
+        
+                            <label for="cp" class="form__label">* ZIP Code
+        
+                                <input type="text" name="cp" id="cp" class="form__input" placeholder="Your ZIP code" pattern="[0-9]{5}"
+                                title="Please enter a valid 5-digit postal code." required>
+                            </label>
+        
+                            <label for="email" class="form__label">* Email
+        
+                                <input type="email" name="email" id="email" class="form__input" placeholder="Your email" required>
+                            </label>
+                        </div>
+                    </fieldset>
+    
+                    <button type="submit" class="form__submit">
+                        Get FREE quote! <i class="bi bi-arrow-right"></i>
+                    </button>
+                </form>
+    
+                <!-- Spinner -->
+                <div class="spinner hidden" id="spinner">
+                    <div class="sk-cube-grid hidden" id="spinner_animation">
+                        <div class="sk-cube sk-cube1"></div>
+                        <div class="sk-cube sk-cube2"></div>
+                        <div class="sk-cube sk-cube3"></div>
+                        <div class="sk-cube sk-cube4"></div>
+                        <div class="sk-cube sk-cube5"></div>
+                        <div class="sk-cube sk-cube6"></div>
+                        <div class="sk-cube sk-cube7"></div>
+                        <div class="sk-cube sk-cube8"></div>
+                        <div class="sk-cube sk-cube9"></div>
+                      </div>
+                        
+    
+                    <p class="spinner__text hidden" id="spinner_text">¡Gracias por contactarnos! <br> Tus datos han sido enviados y un asesor se pondrá en contacto contigo.</p>
+                </div>
+    
+            </div>
+        </div>
+     </main>
+
+    <!-- ======= about ======= -->
+     <section class="about contenedor" id="about">
+        <div class="about__box">
+            <h2 class="about__heading">Welcome to Your <span class="heading--blue"> Trusted <br>Local HVAC Experts</span></h2>
+
+            <div class="about__line"></div>
+        </div>
+        
+        <h3 class="about__text about__text--highlight">We offer Heating & Air Conditioning solutions in Dallas, Tx and Oklahoma.</h3>
+
+        <p class="about__text">
+            For over 12 years, Warrior Mechanical HVAC has been the trusted choice for heating and cooling services in Dallas, TX, and Oklahoma. Our team of certified HVAC technicians is dedicated to providing fast, reliable, and high-quality service, ensuring your home or business stays comfortable year-round.
+        </p>
+
+        <p class="about__text">We specialize in HVAC maintenance, repairs, and new system installations, delivering energy-efficient solutions that enhance indoor comfort while reducing energy costs. Whether you need an AC repair, furnace installation, or routine tune-up, we’ve got you covered!</p>
+
+        <p class="about__text">💰 <span class="about__text--bold">Easy Financing Available!</span> Enjoy 15-18 months with no interest and get approved in just 48 hours—making your HVAC upgrades more accessible than ever. <br> 
+        🌎 <span class="about__text--bold">Hablamos Español</span> – Providing expert HVAC services for both English and Spanish-speaking customers!</p>
+
+
+        <h3 class="about__text about__text--highlight">Stay cool in the summer, warm in the winter, and comfortable every day with Warrior Mechanical HVAC!</h3>
+
+        <a href="#contact" class="about__button">
+            <p>Get a FREE Estimate! </p>
+
+            <i class="bi bi-arrow-right"></i>
+        </a>
+
+
+
+     </section>
+
 
     <!-- ======= services ======= -->
     <section class="services" id="services">
 
         <div class="services__box">
-            <h2 class="services__heading">Heating & Air Conditioning Services</h2>
+            <h2 class="services__heading"><span class="services__heading--yellow">Heating & Air Conditioning</span> Services</h2>
 
             <div class="services__line"></div>
 

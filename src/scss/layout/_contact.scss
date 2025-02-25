@@ -2,9 +2,10 @@
 @use 'base/variables' as v;
 
 .contact {
-    background: linear-gradient(to right, rgba(1, 40, 64, 0.70), rgba(1, 40, 64, 0.70)) , url('../img/contact.jpg');
+    background: linear-gradient(to right, rgba(1, 40, 64, 0.70), rgba(1, 40, 64, 0.60)) , url('../img/contact.jpg');
     background-size: cover;
     background-position: center;
+    
     padding: 4rem;
     display: flex;
     flex-direction: column;

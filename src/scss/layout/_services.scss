@@ -3,7 +3,7 @@
 
 
 .services {
-    background: linear-gradient(to right, rgba(1, 40, 64, 0.70), rgba(1, 40, 64, 0.70)) , url('../img/contact.jpg');
+    background: linear-gradient(to right, rgba(1, 40, 64, 0.70), rgba(1, 40, 64, 0.60)) , url('../img/contact.jpg');
     background-size: cover;
     background-position: center;
 
@@ -11,7 +11,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 3rem;
+    gap: 4rem;
 
     &__heading {
         color: v.$white;
@@ -29,12 +29,13 @@
     &__grid {
         display: flex;
         justify-content: center;
+        width: 90%;
+        gap: 3rem;
         
-        gap: 4rem;
-        /* margin-top: 4rem; */
 
         @include m.phone {
             flex-direction: column;
+            width: 100%;
         }
 
         @include m.tablet {
