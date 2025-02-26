@@ -6,11 +6,6 @@
     background-size: cover;
     background-position: center;
 
-    
-    
-
-    
-
     &__content {
         width: 80%;
         margin: 0 auto;
@@ -97,6 +92,7 @@
         padding: 1rem;
         border-radius: 1rem;
         background-color: v.$gray-1;
+        font-size: v.$small-font-size;
     }
 
     &__submit {
