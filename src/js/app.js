@@ -81,6 +81,7 @@ document.getElementById("form").addEventListener("submit", function (event) {
 // Cerrar el modal al hacer clic en la 'X'
 document.querySelector(".close").addEventListener("click", function () {
     document.getElementById("modal").style.display = "none";
+});
 
 
 /*======= Actualizar año footer =======*/
