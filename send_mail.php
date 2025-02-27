@@ -1,43 +1,31 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nombre = $_POST["nombre"];
-    $telefono = $_POST["telefono"];
-    $cp = $_POST["cp"];
-    $email = $_POST["email"];
-    $captcha = $_POST["g-recaptcha-response"];
+    $nombre = htmlspecialchars($_POST["nombre"]);
+    $telefono = htmlspecialchars($_POST["telefono"]);
+    $cp = htmlspecialchars($_POST["cp"]);
+    $email = filter_var($_POST["email"], FILTER_SANITIZE_EMAIL);
 
-    // Verificar si se completó el reCAPTCHA
-    if (!$captcha) {
-        die("Error: Por favor verifica el reCAPTCHA.");
+    // Validar que el correo sea válido
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        die("Correo inválido.");
     }
 
-    // Validar el reCAPTCHA con Google
-    $secretKey = "6LcGu-MqAAAAAA1dxua8TcROGRVBUxOa2KUycuio";
-    $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$secretKey&response=$captcha");
-    $responseKeys = json_decode($response, true);
-
-    if (!$responseKeys["success"]) {
-        die("Error: No se pudo verificar el reCAPTCHA.");
-    }
-
-    // Si pasó el reCAPTCHA, enviar el correo
-    $destinatario = "tu-correo@tu-dominio.com"; // Cambia esto
-    $asunto = "Nuevo contacto desde la web";
-
+    $destinatario = "camoralesh27@gmail.com"; // Cambia esto por tu correo real
+    $asunto = "Nuevo mensaje de cotización";
     $mensaje = "Nombre: $nombre\n";
     $mensaje .= "Teléfono: $telefono\n";
     $mensaje .= "Código Postal: $cp\n";
     $mensaje .= "Email: $email\n";
 
-    $headers = "From: $email\r\n";
-    $headers .= "Reply-To: $email\r\n";
+    $cabeceras = "From: $email\r\n";
+    $cabeceras .= "Reply-To: $email\r\n";
 
-    if (mail($destinatario, $asunto, $mensaje, $headers)) {
-        echo "Correo enviado correctamente.";
+    if (mail($destinatario, $asunto, $mensaje, $cabeceras)) {
+        echo "Mensaje enviado correctamente.";
     } else {
-        echo "Error al enviar el correo.";
+        echo "Error al enviar el mensaje.";
     }
 } else {
-    echo "Acceso denegado.";
+    echo "Acceso no permitido.";
 }
 ?>

@@ -159,20 +159,23 @@
     
             <div class="hero__form">
                 <form action="send_mail.php" method="POST" class="form" id="form">
-                    <h3 class="form__title">Request a Free Quote </h3>
+                    <h3 class="form__title">Request a Free Quote</h3>
                 
                     <fieldset class="form__fieldset">
                         <div class="form__grid">
                             <label for="nombre" class="form__label">* Name
                                 <input type="text" name="nombre" id="nombre" class="form__input" placeholder="Your name" required>
                             </label>
-                            
+                
                             <label for="telefono" class="form__label">* Phone
-                                <input type="tel" name="telefono" id="telefono" class="form__input" placeholder="Your phone number" required>
+                                <input type="tel" name="telefono" id="telefono" class="form__input" placeholder="Your phone number"
+                                    pattern="[0-9]{3}[0-9]{3}[0-9]{4}" title="Please enter a valid phone number in the format XXX-XXX-XXXX."
+                                    required>
                             </label>
                 
                             <label for="cp" class="form__label">* ZIP Code
-                                <input type="text" name="cp" id="cp" class="form__input" placeholder="Your ZIP code" required>
+                                <input type="text" name="cp" id="cp" class="form__input" placeholder="Your ZIP code" pattern="[0-9]{5}"
+                                    title="Please enter a valid 5-digit postal code." required>
                             </label>
                 
                             <label for="email" class="form__label">* Email
@@ -181,13 +184,12 @@
                         </div>
                     </fieldset>
                 
-                    <!-- reCAPTCHA -->
-                    <div class="g-recaptcha" data-sitekey="6LcGu-MqAAAAAGawovQqPFGw8GO-7I93-vKGfYHA"></div>
-                
                     <button type="submit" class="form__submit">
                         Get FREE quote! <i class="bi bi-arrow-right"></i>
                     </button>
                 </form>
+                
+                
                 
                 <!-- Script de Google reCAPTCHA -->
                 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
