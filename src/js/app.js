@@ -60,6 +60,28 @@ function mostrarMensajeError() {
 /* ==== Cambiar idioma ingles - español ==== */
 
 
+/* ==== Mandando datos del form a correo ==== */
+document.getElementById("form").addEventListener("submit", function (event) {
+    event.preventDefault(); // Evita que la página se recargue
+
+    let formData = new FormData(this);
+
+    fetch("send_mail.php", {
+        method: "POST",
+        body: formData
+    })
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById("modal-message").innerText = data;
+        document.getElementById("modal").style.display = "block";
+    })
+    .catch(error => console.error("Error:", error));
+});
+
+// Cerrar el modal al hacer clic en la 'X'
+document.querySelector(".close").addEventListener("click", function () {
+    document.getElementById("modal").style.display = "none";
+
 
 /*======= Actualizar año footer =======*/
 document.getElementById("year").textContent = new Date().getFullYear();

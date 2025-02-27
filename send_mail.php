@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     $destinatario = "camoralesh27@gmail.com"; // Cambia esto por tu correo real
-    $asunto = "Nuevo mensaje de cotización";
+    $asunto = "NEW prospective customer from WARRIOR AC webpage!";
     $mensaje = "Nombre: $nombre\n";
     $mensaje .= "Teléfono: $telefono\n";
     $mensaje .= "Código Postal: $cp\n";
