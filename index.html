@@ -158,7 +158,7 @@
             </div>
     
             <div class="hero__form">
-                <form action="send_mail.php" method="POST" class="form" id="form">
+                <form action="form.php" method="POST" class="form" id="form">
                     <h3 class="form__title">Request a Free Quote</h3>
                 
                     <fieldset class="form__fieldset">
@@ -183,34 +183,20 @@
                             </label>
                         </div>
                     </fieldset>
-                
+                    
+                    <div class="form__recaptcha">
+                        <div class="g-recaptcha" data-sitekey="6LdvoOgqAAAAAKFw-ot0GdkBdtgFdrIZV1i-4w2f"></div>
+                    </div>
+                    
                     <button type="submit" class="form__submit">
                         Get FREE quote! <i class="bi bi-arrow-right"></i>
                     </button>
                 </form>
                 
                 
-                
                 <!-- Script de Google reCAPTCHA -->
                 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-                
-    
-                <!-- Spinner -->
-                <div class="spinner hidden" id="spinner">
-                    <div class="sk-cube-grid hidden" id="spinner_animation">
-                        <div class="sk-cube sk-cube1"></div>
-                        <div class="sk-cube sk-cube2"></div>
-                        <div class="sk-cube sk-cube3"></div>
-                        <div class="sk-cube sk-cube4"></div>
-                        <div class="sk-cube sk-cube5"></div>
-                        <div class="sk-cube sk-cube6"></div>
-                        <div class="sk-cube sk-cube7"></div>
-                        <div class="sk-cube sk-cube8"></div>
-                        <div class="sk-cube sk-cube9"></div>
-                      </div>
                         
-    
-                    <p class="spinner__text hidden" id="spinner_text">¡Gracias por contactarnos! <br> Tus datos han sido enviados y un asesor se pondrá en contacto contigo.</p>
                 </div>
     
             </div>
@@ -661,7 +647,7 @@
     </section>
 
     <!-- ======= footer ======= -->
-    <footer class="footer">
+    <footer class="footer" id="footer">
         <div class="footer__text">
             WarriorAC © <span id="year"></span> - All rights reserved  
         </div>
@@ -671,6 +657,9 @@
     <a href="https://wa.me/14693461917" class="whatsapp-button" target="_blank" title="Enviar mensaje por WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
+
+    <!-- ==== recaptcha ==== -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
     <!-- ==== main JS ==== -->
     <script src="build/js/app.js"></script>

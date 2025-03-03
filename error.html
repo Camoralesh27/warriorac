@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- -- Meta -- -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- -- Favicon -- -->
+    <link rel="icon" href="./build/img/icon.png" type="image/x-icon">
+    <link rel="apple-touch-icon" type="image/png" href="./build/img/icon.png">
+
+    <!-- -- Titulo -- -->
+    <title data-section="title" data-value="title">Warrior Mechanical HVAC | Expert HVAC Services in Dallas, TX & Oklahoma - Installation, Repair & Maintenance</title>
+
+    <!-- -- Descripcion -- -->
+    <meta name="description" content="Expert HVAC services in Dallas, TX & Oklahoma. Reliable air conditioning installation, repair & maintenance for homes & businesses. Get a free quote now!">
+
+    <!-- -- Keywords -- -->
+    <meta name="keywords" content="Warrior Mechanical HVAC, HVAC services, air conditioning, heating, cooling, installation, repair, maintenance, Dallas TX, Oklahoma, energy-efficient, residential, commercial, reliable HVAC">
+
+    <!-- -- Indexacion -- -->
+    <meta name="robots" content="index, follow">
+
+    <!-- -- Iconos -- -->   
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+
+    <!-- boostrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- --- Estilos --- -->
+    <link rel="stylesheet" href="build/css/app.css">
+</head>
+<body>
+    <!-- ======= header ======= -->
+    <header class="header" id="home">
+        <!-- header -->
+        <div class="header__info">
+            <div class="header__info-location">
+                <i class="fa-solid fa-envelope"></i>
+                <p class="header__info-location-text">alfredd.loya@gmail.com</p>
+            </div>
+
+            <div class="header__info-phone">
+                <i class="fas fa-phone"></i>
+                <span class="header__info-phone-text"><span>Call us now!</span> <a class="header__info-phone-number" href="tel: +52 (627)-522-00-47"> +1 (214) 282 4133</a></span>
+            </div>
+        </div>    
+    </header>
+
+    
+
+    <!-- ======= hero ======= -->
+     
+    <main class="success">
+        <div class="success__box">
+            <div class="success__icon success__icon--error">
+                <i class="bi bi-x-lg"></i>
+            </div>
+            <h3 class="success__title">ERROR!</h3>
+            <p class="success__text">Unfortunately, we were unable to receive your information.<br>Please reach out to us for assistance from a representative.</p>
+            <a class="success__link" href="index.html#contact">Contact us <i class="bi bi-arrow-right"></i></a>
+        </div>
+    </main>
+    
+    
+
+
+    <!-- ======= footer ======= -->
+    <footer class="footer">
+        <div class="footer__text">
+            WarriorAC © <span id="year"></span> - All rights reserved  
+        </div>
+    </footer>
+
+    <script>
+        let seconds = 4; // Tiempo de espera antes de redirigir
+        const countdownElement = document.createElement("p"); // Crear elemento para el contador
+        countdownElement.id = "countdown"; 
+        countdownElement.textContent = `Redirecting in ${seconds} seconds...`;
+        
+        // Insertar el contador en la página (dentro del main)
+        document.addEventListener("DOMContentLoaded", function() {
+            const successBox = document.querySelector(".success__box");
+            successBox.appendChild(countdownElement);
+        });
+    
+        // Actualizar el contador cada segundo
+        const countdownInterval = setInterval(() => {
+            seconds--;
+            countdownElement.textContent = `Redirecting in ${seconds} seconds...`;
+            
+            if (seconds <= 0) {
+                clearInterval(countdownInterval); // Detener el contador
+                window.location.replace("index.html#contact"); // Redirigir
+            }
+        }, 1000);
+    </script>
+    
+
+    <!-- ==== main JS ==== -->
+    <script src="build/js/app.js"></script>
+
+    <!-- ==== FontAwesome ==== -->
+    <script src="https://kit.fontawesome.com/09c3aa2d96.js" crossorigin="anonymous"></script>
+    
+</body>
+</html>
