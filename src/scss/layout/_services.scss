@@ -41,7 +41,6 @@
         @include m.tablet {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            
         }
 
         /* @include m.tablet {
@@ -77,6 +76,7 @@
     width: 27rem;
     /* height: 17rem; */
     min-height: 25rem;
+    margin: 0 auto;
 
     &__picture {
         width: 100%;

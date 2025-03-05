@@ -12,18 +12,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     $fecha = date('d/m/Y', time());
-    $ip = $_SERVER["REMOTE_ADDR"];
+    /* $ip = $_SERVER["REMOTE_ADDR"];
     $captcha = $_POST["g-recaptcha-response"];
-    $secretkey = "secretkey"; // Cambia esto por tu secret key
+    $secretkey = "secretkey"; */ // Cambia esto por tu secret key
 
     // Verificación de reCAPTCHA
-    $respuesta = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$secretkey&response=$captcha&remoteip=$ip");
+    /* $respuesta = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$secretkey&response=$captcha&remoteip=$ip");
     $atributos = json_decode($respuesta, TRUE);   
 
     if (intval($atributos["success"]) !== 1) {
         header('Location: /error.html');
         exit;
-    }
+    } */
 
     // Cuerpo del mensaje de correo
     $destinatario = "camoralesh27@gmail.com"; // Cambia esto por tu correo real

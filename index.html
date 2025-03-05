@@ -58,21 +58,22 @@
         </div>
 
         <ul class="nav__links">
-            <li class="nav__links-item"><a href="#home" class="nav__links-link">Home</a></li>
-            <li class="nav__links-item"><a href="#about" class="nav__links-link">About us</a></li>
-            <li class="nav__links-item"><a href="#services" class="nav__links-link">Services</a></li>
-            <li class="nav__links-item"><a href="#reviews" class="nav__links-link">Reviews</a></li>
-            <li class="nav__links-item"><a href="#contact" class="nav__links-link">Contact us</a></li>
+            <li class="nav__links-item"><a href="index.html#home" class="nav__links-link">Home</a></li>
+            <li class="nav__links-item"><a href="index.html#about" class="nav__links-link">About us</a></li>
+            <li class="nav__links-item"><a href="index.html#services" class="nav__links-link">Services</a></li>
+            <li class="nav__links-item"><a href="index.html#reviews" class="nav__links-link">Reviews</a></li>
+            <li class="nav__links-item"><a href="index.html#contact" class="nav__links-link">Contact us</a></li>
+            <li class="nav__links-item"><a href="prices.html" class="nav__links-link">Prices</a></li>
         </ul>
 
         <div class="nav__buttons">
-            <a href="#contact" class="nav__button">
+            <a href="index.html#contact" class="nav__button">
                 Financing
 
                 <i class="bi bi-arrow-right"></i>
             </a>
 
-            <a href="#contact" class="nav__button">
+            <a href="index.html#contact" class="nav__button">
                 Get a FREE Estimate!
 
                 <i class="bi bi-arrow-right"></i>
@@ -99,33 +100,37 @@
         <nav class="navM__menu" id="navM-menu">
             <ul class="navM__list">
                 <li class="navM__item">
-                    <a href="#home" class="navM__link">Home</a>
+                    <a href="index.html#home" class="navM__link">Home</a>
                 </li>
 
                 <li class="navM__item">
-                    <a href="#about" class="navM__link">About us</a>
+                    <a href="index.html#about" class="navM__link">About us</a>
                 </li>
 
                 <li class="navM__item">
-                    <a href="#services" class="navM__link">Services</a>
+                    <a href="index.html#services" class="navM__link">Services</a>
                 </li>
 
                 <li class="navM__item">
-                    <a href="#reviews" class="navM__link">Reviews</a>
+                    <a href="index.html#reviews" class="navM__link">Reviews</a>
                 </li>
 
                 <li class="navM__item">
-                    <a href="#contact" class="navM__link">Contac us</a>
+                    <a href="index.html#contact" class="navM__link">Contac us</a>
+                </li>
+
+                <li class="navM__item">
+                    <a href="prices.html" class="navM__link">Prices</a>
                 </li>
 
                 <div class="navM__buttons">
-                    <a href="#contact" class="navM__button navM__link">
+                    <a href="index.html#contact" class="navM__button navM__link">
                         Financing
     
                         <i class="bi bi-arrow-right"></i>
                     </a>
     
-                    <a href="#contact" class="navM__button navM__link">
+                    <a href="index.html#contact" class="navM__button navM__link">
                         Get a FREE Estimate!
     
                         <i class="bi bi-arrow-right"></i>
@@ -158,7 +163,11 @@
             </div>
     
             <div class="hero__form">
-                <form action="form.php" method="POST" class="form" id="form">
+                <form action="https://formsubmit.co/
+                alfredd.loya@gmail.com" method="POST" class="form" id="form">
+                    <input type="hidden" name="_next" value="https://warriorac.com/success.html">
+                    <input type="hidden" name="_subject" value="New lead from Webpage!">
+
                     <h3 class="form__title">Request a Free Quote</h3>
                 
                     <fieldset class="form__fieldset">
@@ -181,21 +190,28 @@
                             <label for="email" class="form__label">* Email
                                 <input type="email" name="email" id="email" class="form__input" placeholder="Your email" required>
                             </label>
+
+                            <label for="service" class="form__label">* How can we help you?
+
+                                <br>
+        
+                                <select name="service" id="service" class="form__input" required>
+                                    <option value="" selected disabled>-- Select an option --</option>
+                                    <option value="installation"> Installation</option>
+                                    <option value="repairs">Repairs</option>
+                                    <option value="maintenance">Maintenance</option>
+                                    <option value="new Construction">New Construction</option>
+                                    <option value="new Construction">Other</option>
+                                </select>
+                            </label>
                         </div>
                     </fieldset>
                     
-                    <div class="form__recaptcha">
-                        <div class="g-recaptcha" data-sitekey="6LdvoOgqAAAAAKFw-ot0GdkBdtgFdrIZV1i-4w2f"></div>
-                    </div>
-                    
                     <button type="submit" class="form__submit">
-                        Get FREE quote! <i class="bi bi-arrow-right"></i>
+                        Request a consultation!<i class="bi bi-arrow-right"></i>
                     </button>
                 </form>
-                
-                
-                <!-- Script de Google reCAPTCHA -->
-                <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
                         
                 </div>
     
@@ -340,75 +356,68 @@
     <section class="estadisticas">
         <div class="estadisticas__box contenedor">
             <div class="estadisticas__grid">
-                <div class="estadisticas__grid-1">
-                    
-                    <div class="estadisticas__item">
-                        <div class="estadisticas__item-resalte">
-                            <div class="estadisticas__item-line"></div>
-
-                            <p class="estadisticas__item-text">
-                                Giving service in
-                            </p>
-                        </div>
-                        
-                        <p class="estadisticas__item-text--grande">Dallas, Tx & Oklahoma</p>
-                        
-                    </div>
-
-                    <div class="estadisticas__item">
-                        <div class="estadisticas__item-resalte">
-                            <div class="estadisticas__item-line"></div>
-
-                            <p class="estadisticas__item-text">
-                                High-quality equipment
-                            </p>
-                        </div>
-                        
-                        <p class="estadisticas__item-text--grande">LOREM</p>
-                        
-                    </div>
-
-                </div>
-
-                <div class="estadisticas__grid-2">
-                    <div class="estadisticas__item estadisticas__item--icono">
-
-
-                        <div class="estadisticas__item-resalte">
-                            <img class="estadisticas__item-img" src="./build/img/hands.png" alt="paper">
-
-                            <div class="estadisticas__item-line"></div>
-
-                            <p class="estadisticas__item-text">
-                                More than
-                            </p>
-                        </div>
-                        
-                        <p class="estadisticas__item-text--grande">20,000</p>
+                <div class="estadisticas__item">
+                    <div class="estadisticas__item-resalte">
+                        <div class="estadisticas__item-line"></div>
 
                         <p class="estadisticas__item-text">
-                            Satisfied customers
+                            Giving service in
                         </p>
-                        
                     </div>
-
-                    <div class="estadisticas__item estadisticas__item--icono">
-                        <img class="estadisticas__item-img" src="./build/img/paper.png" alt="paper">
-                        <div class="estadisticas__item-resalte">
-                            <div class="estadisticas__item-line"></div>
-
-                            <p class="estadisticas__item-text">
-                                Warranty on installation
-                            </p>
-                        </div>
-                        
-                        <p class="estadisticas__item-text--grande">5 años</p>
-                        
-                    </div>
-
-
+                    
+                    <p class="estadisticas__item-text--grande">Dallas, Tx & Oklahoma</p>
+                    
                 </div>
 
+                <div class="estadisticas__item estadisticas__item--icono">
+
+
+                    <div class="estadisticas__item-resalte">
+                        <img class="estadisticas__item-img" src="./build/img/hands.png" alt="paper">
+
+                        <div class="estadisticas__item-line"></div>
+
+                        <p class="estadisticas__item-text">
+                            More than
+                        </p>
+                    </div>
+                    
+                    <p class="estadisticas__item-text--grande">30,000</p>
+
+                    <p class="estadisticas__item-text">
+                        Satisfied customers
+                    </p>
+                    
+                </div>
+
+                <div class="estadisticas__item">
+                    <div class="estadisticas__item-resalte">
+                        <div class="estadisticas__item-line"></div>
+
+                        <p class="estadisticas__item-text">
+                            Machines covered by
+                        </p>
+                    </div>
+                    
+                    <p class="estadisticas__item-text--grande">10-year warranty</p>
+                    
+                </div>
+
+                
+
+                <div class="estadisticas__item estadisticas__item--icono">
+                    <img class="estadisticas__item-img" src="./build/img/paper.png" alt="paper">
+                    <div class="estadisticas__item-resalte">
+                        <div class="estadisticas__item-line"></div>
+
+                        <p class="estadisticas__item-text">
+                            Installation covered by
+                        </p>
+                    </div>
+                    
+                    <p class="estadisticas__item-text--grande">1-year warranty </p>
+                    
+                </div>
             </div>
 
             <div class="estadisticas__contenido">
@@ -417,11 +426,13 @@
                 </h2>
 
                 <p class="estadisticas__text">
-                    Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris.
+                    We have provided reliable solutions in the installation, maintenance, and repair of HVAC systems. Our commitment to quality and customer satisfaction has allowed us to help hundreds of homes and businesses maintain a comfortable and efficient environment. 
+                    
+                    Contact us today to learn more about our services and how we can help you!
                 </p>
 
                 <a href="#contact" class="estadisticas__button">
-                    GET A FREE ESTIMATE!
+                    Talk to an expert!
 
                     <i class="bi bi-arrow-right"></i>
                 </a>
@@ -659,7 +670,7 @@
     </a>
 
     <!-- ==== recaptcha ==== -->
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> -->
 
     <!-- ==== main JS ==== -->
     <script src="build/js/app.js"></script>

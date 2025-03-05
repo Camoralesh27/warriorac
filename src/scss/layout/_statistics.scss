@@ -9,9 +9,8 @@
     &__box {
         display: grid;
         grid-template-columns: 4fr 2fr;
+        gap: 3.5rem;
 
-        
-        
         @include m.phone {
             display: flex;
             flex-direction: column-reverse;
@@ -26,49 +25,24 @@
     }
 
     &__grid {
-        display: flex;
-        flex-direction: row;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
         gap: 2rem;
         justify-content: center;
+        align-items: center;
 
         @include m.phone {
+            display: flex;
             flex-direction: column;
             align-items: center;
             gap: 2rem;
         }
 
         @include m.tablet {
+            display: flex;
             flex-direction: column;
             align-items: center;
             gap: 2rem;
-        }
-    }
-
-    &__grid-1 {
-        display: flex;
-        flex-direction: column;
-        gap: 5rem;
-        justify-content: center;
-
-        @include m.phone {
-            gap: 2rem;
-        }
-    }
-
-    &__grid-2 {
-        display: flex;
-        flex-direction: column;
-        gap: 5rem;
-        justify-content: center;
-        margin-left: -5rem;
-
-        @include m.phone {
-            margin: 0;
-            gap: 2rem;
-        }
-
-        @include m.tablet {
-            margin-left: 0;
         }
     }
 
@@ -78,7 +52,12 @@
         background-color: v.$white;
         color: v.$blue-2;
         padding: 3rem;
-        width: 37rem;
+        width: 32rem;
+        min-height: 20rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0 auto;
 
         @include m.phone {
             width: 30rem;
@@ -120,8 +99,8 @@
             line-height: 2.5rem;
 
             &--grande {
-                font-size: v.$h2-font-size;
-                font-weight: 700;
+                font-size: 3.2rem;
+                font-weight: 900;
 
                 @include m.tablet {
                     font-size: v.$h1-font-size-mobile;

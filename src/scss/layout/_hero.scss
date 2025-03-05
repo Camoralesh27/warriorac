@@ -61,8 +61,6 @@
     min-width: max-content;
     border-radius: 2rem;
 
-    
-
     &__title {
         color: v.$blue-3;
         text-align: center;
@@ -93,6 +91,16 @@
         border-radius: 1rem;
         background-color: v.$gray-1;
         font-size: v.$small-font-size;
+
+        & option {
+            color: v.$black;
+            
+    
+
+            &:checked {
+                color: v.$blue-2;
+            }
+        }
     }
 
     &__submit {
@@ -104,46 +112,7 @@
             border: none;
         }
     }
-
-    &__recaptcha {
-        margin: 1rem 0;
-    }
 }
 
 
-/* === Estilos para el modal === */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-}
-.modal-content {
-    background-color: white;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 50%;
-    text-align: center;
-}
-.close {
-    color: red;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-/* === auxiliares JS  === */
-.hidden {
-    display: none;
-}
-
-.flex {
-    display: flex;
-}
 

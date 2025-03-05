@@ -14,6 +14,7 @@
     &__grid {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
 
         @include m.phone {
             grid-template-columns: 1fr;
@@ -24,14 +25,187 @@
         }
     }
 
-    &__item {
-        background-color: v.$gray-1;
-        border-radius: 2rem;
-        padding: 3rem;
-        margin: 2rem;
+    &__box {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        &-line {
+            width: 85%;
+            height: .4rem;
+            background-color: v.$gray-2;
+            margin: 2rem auto;
+            display: none;
+
+            @include m.phone {
+                display: block;
+            }
+
+            @include m.tablet {
+                display: block;
+            }
+         }
+    }
+
+    &__title {
+        font-weight: 600;
+        color: v.$blue-2;
+        font-size: 3.3rem;
+
+        &--blue {
+            color: v.$blue-1;
+            font-size: 4rem;
+        }
+    }
+}
+
+.item { 
+    background-color: v.$gray-1;
+    border-radius: 2rem;
+    padding: 2rem;
+    box-shadow: v.$box-shadow;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2.5rem;
+    border: solid 2px v.$black;
+    min-height: 81rem;
+    position: relative;
+
+    @include m.phone {
+        min-height: auto;
+    }
+
+    @include m.tablet {
+        width: 50%; 
+        margin: 0 auto;
+        min-height: auto;
+    }
+
+    &--highlight {
+        border: solid 5px v.$blue-1;
+        /* background-color: rgb(254, 240, 222); */
+    }
+
+    &__star {
+        background-color: v.$yellow-2;
+        width: 5.5rem;
+        height: 5.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10rem;
+        position: absolute;
+        top: -2.5rem;
+        left: 98%;
+        z-index: 1;
+        transform: translateX(-50%);
         box-shadow: v.$box-shadow;
+        
+
+        & i {
+            color: v.$white;
+            font-size: 2.9rem;
+        }
+    }
+
+    /* HEAD */
+    &__head {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    &__img{
+        width: 100%;
+        height: 15rem;
+        object-fit: cover;
+        border-radius: 1rem;
+    }
+
+    &__title {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: v.$black;
+        text-transform: uppercase;
+        line-height: 2.5rem;
+    }
+
+    &__line {
+        width: 100%;
+        height: .4rem;
+        background-color: v.$gray-3;
+        margin: .5rem;
+    }
+
+    /* BODY */
+    &__body {
         display: flex;
         flex-direction: column;
         gap: 1rem;
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+    &__feature-capacity {
+        background-color: #93cbc4;
+        font-size: 1.5rem;
+        font-weight: 600;
+        border: solid 2px v.$black;
+        border-radius: 10rem;
+        padding: .5rem 2rem;
+        width: 100%;
+    }
+
+    &__feature-title {
+        font-weight: 600;
+        color: v.$black;
+        width: min-content;
+        padding: .5rem 2rem;
+        border: solid 2px v.$black;
+        border-radius: 10rem;
+        margin: 0 auto;
+    }
+
+    &__feature {
+        display: flex;
+        justify-content: flex-start;
+        gap: 1rem;
+        font-size: 1.7rem;
+        color: v.$black;
+    }
+
+    &__feature-icon {
+        font-size: 2rem;
+        color: v.$blue-2;
+    }
+
+    &__feature-text {
+        text-align: left;
+    }
+
+    /* FOOTER */
+    &__footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: .5rem;
+    }
+
+    &__leyend {
+        font-size: 1.5rem;
+        color: v.$gray-4;
+    }
+
+    &__price {
+        font-size: 2.5rem;
+        font-weight: 900;
+        color: v.$black;
+        border: solid 2px v.$black;
+        border-radius: 10rem;
+        width: 100%;
+        padding: 0 2rem;
     }
 }
