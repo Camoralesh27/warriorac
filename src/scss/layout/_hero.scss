@@ -92,13 +92,35 @@
         background-color: v.$gray-1;
         font-size: v.$small-font-size;
 
+        &:focus {
+            background-color: v.$yellow-form;
+        }
+    }
+
+    & select {
+        border: 1px solid v.$gray-3;
+        padding: 1rem;
+        border-radius: 1rem;
+        background-color: v.$gray-1;
+        font-size: v.$small-font-size;
+        color: v.$gray-4;
+        
+        @include m.phone {
+            height: 4rem;
+        }
+
+        &:focus {
+            outline: none;
+            background-color:  v.$yellow-form;
+        }
+
         & option {
             color: v.$black;
             
     
 
             &:checked {
-                color: v.$blue-2;
+                font-weight: 600;
             }
         }
     }
@@ -107,7 +129,7 @@
         @include m.boton(v.$yellow-2, v.$black);
         
         & {
-            margin-top: 1rem;
+            margin-top: 2.5rem;
             width: 100%;
             border: none;
         }
