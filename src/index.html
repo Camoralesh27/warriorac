@@ -6,20 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- -- Favicon -- -->
-    <link rel="icon" href="./build/img/icon.png" type="image/x-icon">
-    <link rel="apple-touch-icon" type="image/png" href="./build/img/icon.png">
+    <link rel="icon" href="./img/icon.png" type="image/x-icon">
+    <link rel="apple-touch-icon" type="image/png" href="./img/icon.png">
 
     <!-- -- Titulo -- -->
-    <title data-section="title" data-value="title">Warrior Mechanical HVAC | Expert HVAC Services in Dallas, TX & Oklahoma - Installation, Repair & Maintenance</title>
+    <title data-section="title" data-value="title">HVAC Services in Dallas, TX & Oklahoma | Warrior Mechanical HVAC</title>
 
     <!-- -- Descripcion -- -->
-    <meta name="description" content="Expert HVAC services in Dallas, Fort worth, Houston, Austin, San Antonio & now Oklahoma. Reliable air conditioning installation, repair & maintenance for homes & businesses. Get a free quote now!">
+    <meta name="description" content="Trusted HVAC installation, repair, and maintenance in Dallas, Fort Worth, Houston, Austin, San Antonio, and Oklahoma. Request your free estimate today.">
 
     <!-- -- Keywords -- -->
     <meta name="keywords" content="Warrior Mechanical HVAC, HVAC services, air conditioning, heating, cooling, installation, repair, maintenance, Dallas TX, Texas, Fort Worth, Houston, Austin, San Antonio, Oklahoma, energy-efficient, residential, commercial, reliable HVAC">
 
     <!-- -- Indexacion -- -->
     <meta name="robots" content="index, follow">
+
+    <!-- -- Canonical -- -->
+    <link rel="canonical" href="https://warriorac.com/">
+
+    <!-- -- Open Graph -- -->
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="HVAC Services in Dallas, TX & Oklahoma | Warrior Mechanical HVAC">
+    <meta property="og:description" content="Trusted HVAC installation, repair, and maintenance in Dallas, Fort Worth, Houston, Austin, San Antonio, and Oklahoma.">
+    <meta property="og:url" content="https://warriorac.com/">
+    <meta property="og:site_name" content="Warrior Mechanical HVAC">
+    <meta property="og:image" content="https://warriorac.com/img/logo.png">
+
+    <!-- -- Twitter -- -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="HVAC Services in Dallas, TX & Oklahoma | Warrior Mechanical HVAC">
+    <meta name="twitter:description" content="Trusted HVAC installation, repair, and maintenance for homes and businesses.">
+    <meta name="twitter:image" content="https://warriorac.com/img/logo.png">
 
     <!-- -- Iconos -- -->   
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
@@ -28,133 +46,42 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <!-- --- Estilos --- -->
-    <link rel="stylesheet" href="build/css/app.css">
+    <link rel="stylesheet" href="./css/app.css">
+
+    <!-- -- Structured Data -- -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HVACBusiness",
+      "name": "Warrior Mechanical HVAC",
+      "url": "https://warriorac.com/",
+      "image": "https://warriorac.com/img/logo.png",
+      "telephone": "+1-469-346-1917",
+      "email": "freddyloya@warriorac.com",
+      "areaServed": [
+        "Dallas, TX",
+        "Fort Worth, TX",
+        "Houston, TX",
+        "Austin, TX",
+        "San Antonio, TX",
+        "Oklahoma"
+      ],
+      "sameAs": [
+        "https://www.facebook.com/profile.php?id=100084471521194",
+        "https://www.instagram.com/warrior.hvac/"
+      ]
+    }
+    </script>
 </head>
 <body>
     <!-- ======= header ======= -->
-    <header class="header" id="home">
-        <!-- header -->
-        <div class="header__info">
-            <div class="header__info-location">
-                <i class="fa-solid fa-envelope"></i>
-                <p class="header__info-location-text">freddyloya@warriorac.com</p>
-            </div>
+    @@include('./partials/layout/header.html')
 
-            <div class="header__info-phone">
-                <i class="fas fa-phone"></i>
-                <span class="header__info-phone-text"><span>Call us now!</span> <a class="header__info-phone-number" href="tel: +1 (469)-346-1917"> +1 (469) 346 1917</a></span>
-            </div>
-        </div>    
-    </header>
-
-    <!-- ======= nav Desktop ======= -->
-    <nav class="nav">  
-        <div class="nav__logo">
-            <a href="#home" class="nav__logo-link">
-                <img src="./build/img/logo.png" alt="Logo" class="nav__logo-img">
-
-                
-            </a>
-        </div>
-
-        <ul class="nav__links">
-            <li class="nav__links-item"><a href="index.html#home" class="nav__links-link">Home</a></li>
-            <li class="nav__links-item"><a href="index.html#about" class="nav__links-link">About us</a></li>
-            <li class="nav__links-item"><a href="index.html#services" class="nav__links-link">Services</a></li>
-            <li class="nav__links-item"><a href="index.html#reviews" class="nav__links-link">Reviews</a></li>
-            <li class="nav__links-item"><a href="index.html#contact" class="nav__links-link">Contact us</a></li>
-            <li class="nav__links-item"><a href="prices.html" class="nav__links-link">Prices</a></li>
-        </ul>
-
-        <div class="nav__buttons">
-            <a href="index.html#contact" class="nav__button">
-                Financing
-
-                <i class="bi bi-arrow-right"></i>
-            </a>
-
-            <a href="index.html#contact" class="nav__button">
-                Get a FREE Estimate!
-
-                <i class="bi bi-arrow-right"></i>
-            </a>
-        </div>
-        
-        <!-- <a href="#contacto" class="nav__button" id="ver-planes">¡Contactanos!</a> -->
-    </nav> 
-
-    <!-- ======= nav Mobile ======= -->
-    <div class="navM">
-        <div class="navM__data">
-            <a class="navM__logo" href="#home">
-                <img class="navM__logo-img" src="./build/img/logo.png" alt="logo">
-            </a>
-
-            <div class="navM__toggle" id="navM-toggle">
-                <i class="fa-solid fa-bars navM__burger"></i>
-                <i class="fa-solid fa-x navM__close"></i>
-            </div>
-        </div>
-
-        <!-- ======= NAV MENU ======= -->
-        <nav class="navM__menu" id="navM-menu">
-            <ul class="navM__list">
-                <li class="navM__item">
-                    <a href="index.html#home" class="navM__link">Home</a>
-                </li>
-
-                <li class="navM__item">
-                    <a href="index.html#about" class="navM__link">About us</a>
-                </li>
-
-                <li class="navM__item">
-                    <a href="index.html#services" class="navM__link">Services</a>
-                </li>
-
-                <li class="navM__item">
-                    <a href="index.html#reviews" class="navM__link">Reviews</a>
-                </li>
-
-                <li class="navM__item">
-                    <a href="index.html#contact" class="navM__link">Contac us</a>
-                </li>
-
-                <li class="navM__item">
-                    <a href="prices.html" class="navM__link">Prices</a>
-                </li>
-
-                <div class="navM__buttons">
-                    <a href="index.html#contact" class="navM__button navM__link">
-                        Financing
-    
-                        <i class="bi bi-arrow-right"></i>
-                    </a>
-    
-                    <a href="index.html#contact" class="navM__button navM__link">
-                        Get a FREE Estimate!
-    
-                        <i class="bi bi-arrow-right"></i>
-                    </a>
-                </div>
-
-
-                <li class="navM__item">
-                    <a href="https://www.facebook.com/profile.php?id=100084471521194" target="_blank" class="navM__link">
-                        <i class="fa-brands fa-facebook navM__icon"></i>
-                    </a>
-
-                    <a href="https://www.instagram.com/warrior.hvac/" target="_blank" class="navM__link">
-                        <i class="fa-brands fa-instagram navM__icon"></i>
-                    </a>
-                </li>
-            </ul>
-
-            
-        </nav>
-    </div>
+    <!-- ======= nav =======-->
+    @@include('./partials/layout/navbar.html')
 
     <!-- ======= hero ======= -->
-     <main class="hero">
+    <main class="hero">
         <div class="hero__content">
             <div class="hero__info">
                 <h1 class="hero__heading">Reliable HVAC Solutions for <span class="hero__heading--yellow">Ultimate Comfort & Efficiency</span></h1>
@@ -216,10 +143,10 @@
     
             </div>
         </div>
-     </main>
+    </main>
 
     <!-- ======= about ======= -->
-     <section class="about contenedor" id="about">
+    <section class="about contenedor" id="about">
         <div class="about__box">
             <h2 class="about__heading">Welcome to Your <span class="heading--blue"> Trusted <br>Local HVAC Experts</span></h2>
 
@@ -248,121 +175,110 @@
 
 
 
-     </section>
-
+    </section>
 
     <!-- ======= services ======= -->
     <section class="services" id="services">
 
-        <div class="services__box">
-            <h2 class="services__heading"><span class="services__heading--yellow">Heating & Air Conditioning</span> Services</h2>
+    <div class="services__box">
+        <h2 class="services__heading">
+        <span class="services__heading--yellow">Heating & Air Conditioning</span> Services
+        </h2>
 
-            <div class="services__line"></div>
+        <div class="services__line"></div>
 
-            <p class="services__subtitle contenedor">We provide top-quality air conditioning services tailored to meet the needs of residential and commercial clients in Dallas, TX, and Oklahoma. Our certified technicians use cutting-edge technology to ensure energy-efficient and reliable solutions. With a strong commitment to excellence, we guarantee customer satisfaction in every service we deliver.</p>
+        <p class="services__subtitle contenedor">
+        We provide top-quality air conditioning services tailored to meet the needs of residential and commercial clients in Dallas, TX, and Oklahoma.
+        </p>
+    </div>
 
-            
+    <div class="services__grid">
+
+        <!-- serv 1 -->
+        <div class="service">
+        <div class="service__picture">
+            <picture class="service__img">
+            <source srcset="./img/service-instalation.avif" type="image/avif">
+            <source srcset="./img/service-instalation.webp" type="image/webp">
+            <img src="./img/service-instalation.jpg" alt="AC installation service" loading="lazy" width="640" height="360">
+            </picture>
         </div>
 
-        <div class="services__grid">
-
-            <!-- serv 1 -->
-            <div class="service">
-                <div class="service__picture">
-                    <img src="./build/img/service-instalation.jpg" alt="air conditioner" class="service__img" loading="lazy">
-                </div>
-                
-
-                <div class="service__info">
-                    <h3 class="service__title">Installation</h3>
-                <p class="service__text">Looking to install a new air
-                    conditioning system? Our
-                    skilled technicians have the
-                    expertise to install a wide
-                    range of units, catering to
-                    both residential and
-                    commercial properties. We
-                    prioritize efficiency to ensure your new system operates seamlessly.</p>
-                </div>
-            </div>
-
-            <!-- serv 2 -->
-            <div class="service">
-                <div class="service__picture">
-                    <img src="./build/img/service-repairs.jpg" alt="air conditioner" class="service__img" loading="lazy">
-                </div>
-                
-
-                <div class="service__info">
-                    <h3 class="service__title">Repairs</h3>
-                <p class="service__text">Is your air conditioner acting
-                    up? Count on us for quick and reliable repairs. Our
-                    technicians are equipped with the knowledge and tools
-                    needed to diagnose and fix a
-                    variety of issues, restoring
-                    your system's functionality
-                    promptly.</p>
-                </div>
-            </div>
-
-            <!-- serv 3 -->
-            <div class="service">
-                <div class="service__picture">
-                    <img src="./build/img/service-maintenance.jpg" alt="air conditioner" class="service__img" loading="lazy">
-                </div>
-                
-
-                <div class="service__info">
-                    <h3 class="service__title">Maintenance</h3>
-                <p class="service__text">Regular maintenance is key to extending the lifespan of your air conditioning unit. Our
-                    professionals offer comprehensive maintenance
-                    services, keeping your system
-                    running smoothly and
-                    efficiently throughout the
-                    year.</p>
-                </div>
-            </div>
-
-            <!-- serv 4 -->
-            <div class="service">
-                <div class="service__picture">
-                    <img src="./build/img/service-newConstruction.jpg" alt="air conditioner" class="service__img" loading="lazy">
-                </div>
-                
-
-                <div class="service__info">
-                    <h3 class="service__title">New Construction</h3>
-                <p class="service__text">Stay ahead with the latest in
-                    air conditioning technology.
-                    We provide upgrade services
-                    to enhance the performance
-                    and energy efficiency of your
-                    existing system, ensuring you enjoy the benefits of modern technology.</p>
-                </div>
-            </div>
+        <div class="service__info">
+            <h3 class="service__title">Installation</h3>
+            <p class="service__text">Looking to install a new air conditioning system? Our skilled technicians ensure efficient and seamless setup.</p>
+        </div>
         </div>
 
-        
-            <a href="prices.html" class="services__button">
-                <p>You won’t believe our PRICES! </p>
+        <!-- serv 2 -->
+        <div class="service">
+        <div class="service__picture">
+            <picture class="service__img">
+            <source srcset="./img/service-repairs.avif" type="image/avif">
+            <source srcset="./img/service-repairs.webp" type="image/webp">
+            <img src="./img/service-repairs.jpg" alt="AC repair service" loading="lazy" width="640" height="360">
+            </picture>
+        </div>
 
-                <i class="bi bi-arrow-right"></i>
-            </a>
-        
+        <div class="service__info">
+            <h3 class="service__title">Repairs</h3>
+            <p class="service__text">Quick and reliable air conditioning repairs to restore your system’s performance.</p>
+        </div>
+        </div>
+
+        <!-- serv 3 -->
+        <div class="service">
+        <div class="service__picture">
+            <picture class="service__img">
+            <source srcset="./img/service-maintenance.avif" type="image/avif">
+            <source srcset="./img/service-maintenance.webp" type="image/webp">
+            <img src="./img/service-maintenance.jpg" alt="AC maintenance service" loading="lazy" width="640" height="360">
+            </picture>
+        </div>
+
+        <div class="service__info">
+            <h3 class="service__title">Maintenance</h3>
+            <p class="service__text">Prevent breakdowns and extend your AC lifespan with our professional maintenance plans.</p>
+        </div>
+        </div>
+
+        <!-- serv 4 -->
+        <div class="service">
+        <div class="service__picture">
+            <picture class="service__img">
+            <source srcset="./img/service-newConstruction.avif" type="image/avif">
+            <source srcset="./img/service-newConstruction.webp" type="image/webp">
+            <img src="./img/service-newConstruction.jpg" alt="AC for new construction" loading="lazy" width="640" height="360">
+            </picture>
+        </div>
+
+        <div class="service__info">
+            <h3 class="service__title">New Construction</h3>
+            <p class="service__text">Energy-efficient HVAC solutions for new residential and commercial projects.</p>
+        </div>
+        </div>
+
+    </div>
+
+    <a href="prices.html" class="services__button">
+        <p>You won’t believe our PRICES!</p>
+        <i class="bi bi-arrow-right"></i>
+    </a>
+
     </section>
 
     <!-- ======= statistics ======= -->
     <section class="estadisticas">
         <div class="estadisticas__box contenedor">
             <div class="estadisticas__grid">
-                <div class="estadisticas__item">
+                <div class="estadisticas__item estadisticas__item--cities">
                     <div class="estadisticas__item-resalte">
                         <div class="estadisticas__item-line"></div>
 
                         <p class="estadisticas__item-text">
                             Giving service in
                         </p>
-                    </div>
+                    </div> 
                     
                     <p class="estadisticas__item-text--grande">Dallas, Fort Worth, Houston, Austin, San Antonio and now Oklahoma.</p>
                     
@@ -372,7 +288,7 @@
 
 
                     <div class="estadisticas__item-resalte">
-                        <img class="estadisticas__item-img" src="./build/img/hands.png" alt="paper">
+                        <img class="estadisticas__item-img" src="./img/hands.png" alt="paper">
 
                         <div class="estadisticas__item-line"></div>
 
@@ -405,7 +321,7 @@
                 
 
                 <div class="estadisticas__item estadisticas__item--icono">
-                    <img class="estadisticas__item-img" src="./build/img/paper.png" alt="paper">
+                    <img class="estadisticas__item-img" src="./img/paper.png" alt="paper">
                     <div class="estadisticas__item-resalte">
                         <div class="estadisticas__item-line"></div>
 
@@ -453,93 +369,120 @@
         <div class="suppliers__slider">
             <div class="suppliers__track">
                 <div class="suppliers__slide">
-                    <img src="./build/img/logo-carrier.png" alt="logo carrier" loading="lazy">
+                    <img src="./img/logo-carrier.png" alt="logo carrier" loading="lazy">
                 </div>
 
                 <div class="suppliers__slide">
-                    <img src="./build/img/logo-honeywell.png" alt="logo honeywell" loading="lazy">
+                    <img src="./img/logo-honeywell.png" alt="logo honeywell" loading="lazy">
                 </div>
 
                 <div class="suppliers__slide">
-                    <img src="./build/img/logo-midea.png" alt="logo midea" loading="lazy">
+                    <img src="./img/logo-midea.png" alt="logo midea" loading="lazy">
                 </div>
 
                 <div class="suppliers__slide">
-                    <img src="./build/img/logo-bryant.png" alt="logo bryant" loading="lazy">
+                    <img src="./img/logo-bryant.png" alt="logo bryant" loading="lazy">
                 </div>
 
                 <div class="suppliers__slide">
-                    <img src="./build/img/logo-daikin.png" alt="logo daikin" loading="lazy">
+                    <img src="./img/logo-daikin.png" alt="logo daikin" loading="lazy">
                 </div>
 
                 <div class="suppliers__slide">
-                    <img src="./build/img/logo-trane.png" alt="logo trane" loading="lazy">
+                    <img src="./img/logo-trane.png" alt="logo trane" loading="lazy">
                 </div>
 
                 <!-- REPEAT -->
                 
                 <div class="suppliers__slide">
-                    <img src="./build/img/logo-carrier.png" alt="logo carrier">
+                    <img src="./img/logo-carrier.png" alt="logo carrier">
                 </div>
 
                 <div class="suppliers__slide">
-                    <img src="./build/img/logo-honeywell.png" alt="logo honeywell">
+                    <img src="./img/logo-honeywell.png" alt="logo honeywell">
                 </div>
 
                 <div class="suppliers__slide">
-                    <img src="./build/img/logo-midea.png" alt="logo midea">
+                    <img src="./img/logo-midea.png" alt="logo midea">
                 </div>
 
                 <div class="suppliers__slide">
-                    <img src="./build/img/logo-bryant.png" alt="logo bryant">
+                    <img src="./img/logo-bryant.png" alt="logo bryant">
                 </div>
 
                 <div class="suppliers__slide">
-                    <img src="./build/img/logo-daikin.png" alt="logo">
+                    <img src="./img/logo-daikin.png" alt="logo">
                 </div>
 
                 <div class="suppliers__slide">
-                    <img src="./build/img/logo-trane.png" alt="logo">
+                    <img src="./img/logo-trane.png" alt="logo">
                 </div>
 
             </div>
         </div>
     </section>
 
-
     <!-- ======= portfolio ======= -->
     <section class="portfolio" id="portfolio">
-        <h2 class="portfolio__title">Some of our <span class="portfolio__title--blue">recent works</span> </h2>
+    <h2 class="portfolio__title">Some of our <span class="portfolio__title--blue">recent works</span></h2>
 
-        <div class="portfolio__line contenedor"></div>
+    <div class="portfolio__line contenedor"></div>
 
-        
+    <div class="portfolio__grid contenedor">
 
-        <div class="portfolio__grid contenedor">
+    <div class="portfolio__box">
+      <div class="portfolio__item">
+        <picture>
+          <source srcset="./img/portfolio1.avif" type="image/avif">
+          <source srcset="./img/portfolio1.webp" type="image/webp">
+          <img src="./img/portfolio1.jpg" alt="Portfolio project 1" class="portfolio__item-img" loading="lazy" width="800" height="600">
+        </picture>
+      </div>
 
-            <div class="portfolio__box">
-                <div class="portfolio__item">
-                    <img src="./build/img/portfolio1.jpg" alt="portfolio 1" class="portfolio__item-img" loading="lazy">
-                </div>
-                <div class="portfolio__item">
-                    <img src="./build/img/portfolio2.jpg" alt="portfolio 2" class="portfolio__item-img" loading="lazy">
-                </div>
-                <div class="portfolio__item">
-                    <img src="./build/img/portfolio3.jpg" alt="portfolio 3" class="portfolio__item-img" loading="lazy">
-                </div>
-            </div>
-            <div class="portfolio__box2">
-                <div class="portfolio__item2">
-                    <img src="./build/img/portfolio4.jpg" alt="portfolio 4" class="portfolio__item-img" loading="lazy">
-                </div>
-                <div class="portfolio__item2">
-                    <img src="./build/img/portfolio5.jpg" alt="portfolio 5" class="portfolio__item-img" loading="lazy">
-                </div>
-                <div class="portfolio__item2">
-                    <img src="./build/img/portfolio6.jpg" alt="portfolio 6" class="portfolio__item-img" loading="lazy">
-                </div>
-            </div>
-        </div>      
+      <div class="portfolio__item">
+        <picture>
+          <source srcset="./img/portfolio2.avif" type="image/avif">
+          <source srcset="./img/portfolio2.webp" type="image/webp">
+          <img src="./img/portfolio2.jpg" alt="Portfolio project 2" class="portfolio__item-img" loading="lazy" width="800" height="600">
+        </picture>
+      </div>
+
+      <div class="portfolio__item">
+        <picture>
+          <source srcset="./img/portfolio3.avif" type="image/avif">
+          <source srcset="./img/portfolio3.webp" type="image/webp">
+          <img src="./img/portfolio3.jpg" alt="Portfolio project 3" class="portfolio__item-img" loading="lazy" width="800" height="600">
+        </picture>
+      </div>
+    </div>
+
+    <div class="portfolio__box2">
+      <div class="portfolio__item2">
+        <picture>
+          <source srcset="./img/portfolio4.avif" type="image/avif">
+          <source srcset="./img/portfolio4.webp" type="image/webp">
+          <img src="./img/portfolio4.jpg" alt="Portfolio project 4" class="portfolio__item-img" loading="lazy" width="800" height="600">
+        </picture>
+      </div>
+
+      <div class="portfolio__item2">
+        <picture>
+          <source srcset="./img/portfolio5.avif" type="image/avif">
+          <source srcset="./img/portfolio5.webp" type="image/webp">
+          <img src="./img/portfolio5.jpg" alt="Portfolio project 5" class="portfolio__item-img" loading="lazy" width="800" height="600">
+        </picture>
+      </div>
+
+      <div class="portfolio__item2">
+        <picture>
+          <source srcset="./img/portfolio6.avif" type="image/avif">
+          <source srcset="./img/portfolio6.webp" type="image/webp">
+          <img src="./img/portfolio6.jpg" alt="Portfolio project 6" class="portfolio__item-img" loading="lazy" width="800" height="600">
+        </picture>
+      </div>
+    </div>
+
+  </div>
     </section>
 
     <!-- ======= reviews ======= -->
@@ -661,25 +604,10 @@
     </section>
 
     <!-- ======= footer ======= -->
-    <footer class="footer" id="footer">
-        <div class="footer__text">
-            WarriorAC © <span id="year"></span> - All rights reserved  
-        </div>
-    </footer>
+    @@include('./partials/layout/footer.html')
 
-    <!-- ==== boton whatsapp ==== -->
-    <a href="https://wa.me/14693461917" class="whatsapp-button" target="_blank" title="Enviar mensaje por WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <!-- ==== recaptcha ==== -->
-    <!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> -->
-
-    <!-- ==== main JS ==== -->
-    <script src="build/js/app.js"></script>
-
-    <!-- ==== FontAwesome ==== -->
-    <script src="https://kit.fontawesome.com/09c3aa2d96.js" crossorigin="anonymous"></script>
+    <!-- ======= scripts ======= -->
+    @@include('./partials/layout/scripts.html')
     
 </body>
 </html>

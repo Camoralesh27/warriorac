@@ -2,9 +2,39 @@
 @use 'base/variables' as v;
 
 .contact {
-    background: linear-gradient(to right, rgba(1, 40, 64, 0.70), rgba(1, 40, 64, 0.60)) , url('../img/contact.jpg');
+    // JPG fallback
+    background: linear-gradient(
+        to right,
+        rgba(1, 40, 64, 0.70),
+        rgba(1, 40, 64, 0.60)
+        ),
+        url('../img/contact.jpg');
     background-size: cover;
     background-position: center;
+
+    // WebP
+    @supports (background-image: url('../img/contact.webp')) {
+        background: linear-gradient(
+            to right,
+            rgba(1, 40, 64, 0.70),
+            rgba(1, 40, 64, 0.60)
+        ),
+        url('../img/contact.webp');
+        background-size: cover;
+        background-position: center;
+    }
+
+    // AVIF (prioridad)
+    @supports (background-image: url('../img/contact.avif')) {
+        background: linear-gradient(
+            to right,
+            rgba(1, 40, 64, 0.70),
+            rgba(1, 40, 64, 0.60)
+        ),
+        url('../img/contact.avif');
+        background-size: cover;
+        background-position: center;
+    }
     
     padding: 4rem;
     display: flex;
@@ -25,32 +55,40 @@
     }
 
     &__grid {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 4rem;
-        /* margin-top: 4rem; */
-
-        @include m.phone {
-            flex-direction: column;
-        }
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 2.5rem;
+        width: 100%;
+        max-width: 110rem; // ajusta si quieres más ancho
+        align-items: stretch; // <- clave: misma altura
 
         @include m.tablet {
-            flex-direction: column;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        @include m.phone {
+            grid-template-columns: 1fr;
         }
     }
 
     &__item {
         background-color: v.$gray-1;
         border-radius: 2rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 27rem;
-        /* height: 17rem; */
+        box-shadow: v.$box-shadow;
         padding: 2rem;
 
+        width: 100%;
+        max-width: none; // para asegurar que tome todo el ancho del grid
         
+        display: flex;
+        flex-direction: column;
+        gap: .2rem;
+
+        // Uniformidad visual
+        min-height: 18rem; // ajusta (ej. 17–22rem)
+
+        align-items: center;
+        justify-content: center;
     }
 
     &__text {
@@ -80,7 +118,4 @@
             transform: scale(1.1);
         }
     }
-
-
-
 }

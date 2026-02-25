@@ -5,44 +5,35 @@
     padding: 5rem 0;
     background-color: v.$gray-1;
 
-
     &__box {
         display: grid;
-        grid-template-columns: 4fr 2fr;
+        grid-template-columns: 1.2fr 0.8fr; // más balanceado
         gap: 3.5rem;
-
-        @include m.phone {
-            display: flex;
-            flex-direction: column-reverse;
-        }
+        align-items: center; // centra verticalmente el contenido derecha/izquierda
 
         @include m.tablet {
-            display: flex;
-            flex-direction: column-reverse;
-            width: 80%;
+            grid-template-columns: 1fr; // en tablet ya no 2 columnas
+            width: 90%;
             margin: 0 auto;
+        }
+
+        @include m.phone {
+            grid-template-columns: 1fr;
         }
     }
 
     &__grid {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 2rem;
-        justify-content: center;
-        align-items: center;
-
-        @include m.phone {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 2rem;
-        }
+        align-items: stretch; // misma altura por fila
 
         @include m.tablet {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 2rem;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        @include m.phone {
+            grid-template-columns: 1fr;
         }
     }
 
@@ -52,28 +43,29 @@
         background-color: v.$white;
         color: v.$blue-2;
         padding: 3rem;
-        width: 32rem;
+
+        width: 100%;      // el grid controla el ancho
+        max-width: none;  // sin límites raros
         min-height: 20rem;
+
         display: flex;
         flex-direction: column;
         justify-content: center;
-        margin: 0 auto;
+        gap: 1rem; // ayuda a consistencia visual
 
         @include m.phone {
-            width: 30rem;
+            min-height: auto; // en móvil no forzar altura
         }
         
-
         &--icono {
             position: relative;
-
         }
 
         &-img {
             width: 9rem;
             position: absolute;
             top: -2rem;
-            right: -4rem;
+            right: -2rem;
 
             @include m.phone {
                 display: none;
@@ -107,6 +99,11 @@
                 }
             }
         }
+    }
+
+    .estadisticas__item--cities .estadisticas__item-text--grande {
+        font-size: 2.2rem; // ajusta a tu escala letras ciudades
+        line-height: 3.2rem;
     }
 
     &__contenido {

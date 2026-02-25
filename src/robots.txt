@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /form.php
+Disallow: /error.html
+Disallow: /success.html
+
+Sitemap: https://warriorac.com/sitemap.xml

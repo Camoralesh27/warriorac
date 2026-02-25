@@ -1,7 +1,7 @@
 {
   "name": "warriorac",
   "version": "1.0.0",
-  "description": "landing page sobre WarriorAC",
+  "description": "landing page warriorAC",
   "type": "module",
   "main": "gulpfile.js",
   "scripts": {
@@ -16,12 +16,14 @@
   "author": "Cristhian Morales @camoralesh27",
   "license": "ISC",
   "devDependencies": {
-    "glob": "^10.4.2",
-    "gulp": "^5.0.0",
+    "glob": "^13.0.5",
+    "gulp": "^5.0.1",
+    "gulp-file-include": "^2.3.0",
+    "gulp-plumber": "^1.2.1",
     "gulp-sass": "^5.1.0",
     "gulp-terser": "^2.1.0",
-    "sass": "^1.83.1",
-    "sharp": "^0.33.4"
+    "sass": "^1.97.3",
+    "sharp": "^0.33.5"
   },
   "packageManager": "pnpm@9.15.3+sha512.1f79bc245a66eb0b07c5d4d83131240774642caaa86ef7d0434ab47c0d16f66b04e21e0c086eb61e62c77efc4d7f7ec071afad3796af64892fae66509173893a"
 }
