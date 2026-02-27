@@ -22,12 +22,11 @@ const sassCompiler = gulpSass(sass);
 //  JS
 // ============================
 export function js() {
-  return src('src/js/**/*.js') // <-- ahora compila todos los JS
+  return src('src/js/**/*.js')
     .pipe(plumber())
-    .pipe(terser()) // minifica JS
+    .pipe(terser())
     .pipe(dest('build/js'));
 }
-
 
 // ============================
 //  LENGUAJES / JSON
@@ -54,8 +53,7 @@ export function css() {
   return src('src/scss/app.scss', { sourcemaps: true })
     .pipe(plumber())
     .pipe(
-      sassCompiler({ outputStyle: 'compressed' })
-        .on('error', sassCompiler.logError)
+      sassCompiler({ outputStyle: 'compressed' }).on('error', sassCompiler.logError)
     )
     .pipe(dest('build/css', { sourcemaps: '.' }));
 }
@@ -86,6 +84,7 @@ export function staticFiles() {
 
 // ============================
 //  Recorte de imágenes (thumbnails)
+//  - Ahora soporta JPG y PNG
 // ============================
 export function crop() {
   const inputFolder = 'src/img/gallery/full';
@@ -95,7 +94,6 @@ export function crop() {
   const height = 180;
 
   if (!fs.existsSync(inputFolder)) {
-    // Si no existe la carpeta de origen, no hay nada que hacer
     return Promise.resolve();
   }
 
@@ -105,59 +103,100 @@ export function crop() {
 
   const images = fs
     .readdirSync(inputFolder)
-    .filter((file) => /\.(jpg)$/i.test(path.extname(file)));
+    .filter((file) => /\.(jpg|jpeg|png)$/i.test(path.extname(file)));
 
   const tasks = images.map((file) => {
     const inputFile = path.join(inputFolder, file);
     const outputFile = path.join(outputFolder, file);
 
-    return sharp(inputFile)
-      .resize(width, height, {
-        position: 'centre',
-      })
-      .toFile(outputFile);
+    // Mantén el mismo formato del archivo de salida
+    const ext = path.extname(file).toLowerCase();
+
+    const pipeline = sharp(inputFile).resize(width, height, { position: 'centre' });
+
+    if (ext === '.png') {
+      return pipeline.png({ compressionLevel: 9 }).toFile(outputFile);
+    }
+
+    return pipeline.jpeg({ quality: 80 }).toFile(outputFile);
   });
 
   return Promise.all(tasks);
 }
 
 // ============================
-//  Procesar imágenes → jpg/png + webp + avif
+//  Procesar imágenes → original optimizado + webp + avif
+//  - PNG mantiene transparencia (alpha) en webp/avif
 // ============================
-
 function procesarImagenes(file, outputSubDir) {
   if (!fs.existsSync(outputSubDir)) {
     fs.mkdirSync(outputSubDir, { recursive: true });
   }
 
   const baseName = path.basename(file, path.extname(file));
-  const extName = path.extname(file);
-  const outputFile = path.join(outputSubDir, `${baseName}${extName}`);
-  const outputFileWebp = path.join(outputSubDir, `${baseName}.webp`);
-  const outputFileAvif = path.join(outputSubDir, `${baseName}.avif`);
+  const extName = path.extname(file).toLowerCase();
 
-  const options = { quality: 80 };
+  const outputOriginal = path.join(outputSubDir, `${baseName}${extName}`);
+  const outputWebp = path.join(outputSubDir, `${baseName}.webp`);
+  const outputAvif = path.join(outputSubDir, `${baseName}.avif`);
 
-  // Devolvemos una Promesa para que Gulp pueda esperar a que termine
   return sharp(file)
     .metadata()
     .then((meta) => {
-      console.log(`Processing file: ${file}, hasAlpha: ${meta.hasAlpha}`);
+      console.log(`Processing: ${file} | hasAlpha: ${meta.hasAlpha}`);
 
-      if (extName.toLowerCase() === '.png') {
-        // Mantener transparencia en PNG
-        return sharp(file)
-          .toFormat('png', { compressionLevel: 9, force: true })
-          .toFile(outputFile);
-      } else {
-        // JPG u otros: generamos jpg (o mantiene ext), webp y avif
-        const tareas = [
-          sharp(file).jpeg(options).toFile(outputFile),
-          sharp(file).webp(options).toFile(outputFileWebp),
-          sharp(file).avif().toFile(outputFileAvif),
-        ];
-        return Promise.all(tareas);
+      const tasks = [];
+
+      // PNG: conservar transparencia + generar webp/avif con alpha
+      if (extName === '.png') {
+        tasks.push(
+          sharp(file)
+            .png({ compressionLevel: 9 })
+            .toFile(outputOriginal)
+        );
+
+        tasks.push(
+          sharp(file)
+            .ensureAlpha()
+            .webp(meta.hasAlpha ? { lossless: true } : { quality: 80 })
+            .toFile(outputWebp)
+        );
+
+        tasks.push(
+          sharp(file)
+            .ensureAlpha()
+            .avif({ quality: 50 })
+            .toFile(outputAvif)
+        );
+
+        return Promise.all(tasks);
       }
+
+      // JPG/JPEG: optimizar + webp + avif
+      if (extName === '.jpg' || extName === '.jpeg') {
+        tasks.push(
+          sharp(file)
+            .jpeg({ quality: 80 })
+            .toFile(outputOriginal)
+        );
+
+        tasks.push(
+          sharp(file)
+            .webp({ quality: 80 })
+            .toFile(outputWebp)
+        );
+
+        tasks.push(
+          sharp(file)
+            .avif({ quality: 45 })
+            .toFile(outputAvif)
+        );
+
+        return Promise.all(tasks);
+      }
+
+      // Otros formatos: no hacer nada
+      return Promise.resolve();
     });
 }
 
@@ -165,7 +204,7 @@ export async function imagenes() {
   const srcDir = './src/img';
   const buildDir = './build/img';
 
-  const images = await glob('./src/img/**/*.{jpg,png}');
+  const images = await glob('./src/img/**/*.{jpg,jpeg,png}');
 
   if (!images.length) {
     return;
@@ -186,7 +225,7 @@ export async function imagenes() {
 export function dev() {
   watch('src/scss/**/*.scss', css);
   watch('src/js/**/*.js', js);
-  watch('src/img/**/*.{png,jpg}', imagenes);
+  watch('src/img/**/*.{png,jpg,jpeg}', imagenes);
   watch('src/img/*.svg', svg);
   watch('src/languages/*.json', languages);
   watch('src/**/*.html', html);
